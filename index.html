@@ -6,162 +6,189 @@
 <title>Liberian Premier League</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#0b0f1a;color:white;transition:0.3s;}
-.light{background:white;color:black;}
+*{margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+body{background:#0b0f1a; color:white; transition:0.3s;}
+.light{background:white; color:black;}
 
-header{background:#002b5c;padding:20px;text-align:center;}
+header{background:#002b5c; padding:20px; text-align:center;}
 
 nav{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-justify-content:center;
-background:#011a36;
-padding:10px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  background:#011a36;
+  padding:10px;
 }
-nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a{color:white; text-decoration:none; font-weight:bold;}
 
 section{padding:40px 8%;}
 
-.card{
-background:#02142b;
-padding:20px;
-border-radius:12px;
-margin:10px 0;
+/* CLUBS */
+.club-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
 }
+.club{
+  background:#02142b;
+  padding:15px;
+  text-align:center;
+  border-radius:8px;
+}
+.club img{width:80px; height:80px; object-fit:cover; border-radius:5px;}
 
 /* PLAYERS */
 .players{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
 }
-.player img{width:100%;border-radius:10px;}
-
-/* CLUB */
-.club-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-gap:20px;
+.player{
+  background:#02142b;
+  border-radius:8px;
+  padding:15px;
+  text-align:center;
 }
-.club{background:#02142b;padding:15px;text-align:center;border-radius:10px;}
+.player img{width:100%; border-radius:8px;}
 
-input,button{
-padding:8px;margin:5px;border:none;border-radius:6px;
+/* MATCHES */
+.match{
+  background:#02142b;
+  margin:10px 0;
+  padding:15px;
+  border-radius:8px;
 }
 
-.admin{display:none;}
+/* TRANSFERS */
+.transfer{
+  background:#02142b;
+  margin:10px 0;
+  padding:15px;
+  border-radius:8px;
+}
+
+/* LOGIN / ADMIN */
+input, button{
+  padding:8px;
+  margin:5px 0;
+  width:100%;
+  border:none;
+  border-radius:5px;
+}
+.admin-section{display:none;}
+
+/* MOBILE */
+@media(max-width:700px){
+  nav{flex-direction:column;}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Liberian Premier League</h1>
+  <h1>Liberian Premier League</h1>
 </header>
 
 <nav>
-<a href="#clubs">Clubs</a>
-<a href="#players">Players</a>
-<a href="#transfers">Transfers</a>
-<a href="#videos">Highlights</a>
-<a href="#login">Login</a>
-<button onclick="mode()">Dark/Light</button>
+  <a href="#clubs">Clubs</a>
+  <a href="#players">Players</a>
+  <a href="#fixtures">Highlights</a>
+  <a href="#transfers">Transfers</a>
+  <a href="#login">Login</a>
+  <button onclick="toggleMode()">Dark/Light</button>
 </nav>
 
 <!-- CLUBS -->
 <section id="clubs">
-<h2>Clubs</h2>
-<div class="club-grid">
-<div class="club">Watanga FC</div>
-<div class="club">LISCR FC</div>
-<div class="club">Heaven Eleven</div>
-<div class="club">Invincible Eleven</div>
-</div>
+  <h2>Clubs</h2>
+  <div class="club-grid">
+    <div class="club"><img src="https://cdn.sportdataapi.com/images/soccer/teams/200/148.png"><p>FC Fassell</p></div>
+    <div class="club"><img src="https://cdn.sportdataapi.com/images/soccer/teams/200/47.png"><p>Heaven Eleven</p></div>
+    <div class="club"><img src="https://cdn.sportdataapi.com/images/soccer/teams/200/123.png"><p>Discoveries S.A.</p></div>
+    <div class="club"><img src="https://cdn.sportdataapi.com/images/soccer/teams/200/65.png"><p>Paynesville FC</p></div>
+    <div class="club"><img src="https://cdn.sportdataapi.com/images/soccer/teams/200/99.png"><p>Watanga FC</p></div>
+  </div>
 </section>
 
 <!-- PLAYERS -->
 <section id="players">
-<h2>Top Players</h2>
-<div class="players">
+  <h2>Top Players</h2>
+  <div class="players">
+    <div class="player">
+      <img src="https://images.pexels.com/photos/159850/football-soccer-ball-on-grass-159850.jpeg">
+      <h3>Goal Scorer</h3>
+      <p>15 Goals</p>
+    </div>
+    <div class="player">
+      <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg">
+      <h3>Assist King</h3>
+      <p>10 Assists</p>
+    </div>
+  </div>
+</section>
 
-<div class="player card">
-<img src="https://images.unsplash.com/photo-1521417531039-4b5f9c0c8f6f">
-<h3>Star Striker</h3>
-<p>Goals: 18</p>
-</div>
+<!-- MATCH HIGHLIGHTS -->
+<section id="fixtures">
+  <h2>Match Highlights</h2>
+  <div class="match">
+    <!-- AFCON Qualifier Highlight (Liberia vs Algeria) -->
+    <iframe width="100%" height="280" src="https://www.dailymotion.com/embed/video/x99bm9y" title="Liberia vs Algeria Highlights" allowfullscreen></iframe>
+    <p>AFCON Qualifiers: Liberia vs Algeria from qualifiers highlights.  [oai_citation:1‡Dailymotion](https://www.dailymotion.com/video/x99bm9y?utm_source=chatgpt.com)</p>
+  </div>
 
-<div class="player card">
-<img src="https://images.unsplash.com/photo-1546519638-68e109498ffc">
-<h3>Midfield King</h3>
-<p>Assists: 12</p>
-</div>
-
-</div>
+  <div class="match">
+    <!-- South Africa vs Liberia -->
+    <iframe width="100%" height="280" src="https://www.cafonline.com/afcon2025/videos/south-africa-liberia-highlights-totalenergiesafconq2023-md3-group-k/" title="South Africa vs Liberia Highlights" allowfullscreen></iframe>
+    <p>South Africa vs Liberia match highlights from CAF qualifiers.  [oai_citation:2‡Confédération Africaine de Football](https://www.cafonline.com/afcon2025/videos/south-africa-liberia-highlights-totalenergiesafconq2023-md3-group-k/?utm_source=chatgpt.com)</p>
+  </div>
 </section>
 
 <!-- TRANSFERS -->
 <section id="transfers">
-<h2>Transfer Market</h2>
-
-<div class="card">Watanga signs young talent</div>
-<div class="card">LISCR new striker deal</div>
-
-</section>
-
-<!-- VIDEOS -->
-<section id="videos">
-<h2>Match Highlights</h2>
-
-<iframe width="100%" height="300"
-src="https://www.youtube.com/embed/5y0wRkT4JxE"
-title="Football highlight" allowfullscreen>
-</iframe>
-
+  <h2>Transfer News</h2>
+  <div class="transfer">Watanga FC sign new striker for upcoming season</div>
+  <div class="transfer">Heaven Eleven renews midfielder contract</div>
 </section>
 
 <!-- LOGIN -->
 <section id="login">
-<h2>Admin Login</h2>
-
-<input id="user" placeholder="Username">
-<input id="pass" type="password" placeholder="Password">
-<button onclick="login()">Login</button>
-
+  <h2>Admin Login</h2>
+  <input id="username" placeholder="Username">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
 </section>
 
-<!-- ADMIN -->
-<section class="admin" id="admin">
-<h2>Admin Dashboard</h2>
+<!-- ADMIN (Hidden) -->
+<section class="admin-section" id="adminPanel">
+  <h2>Admin Panel</h2>
 
-<h3>Add Match Result</h3>
-<input placeholder="Team A">
-<input placeholder="Score">
-<input placeholder="Team B">
-<button>Add</button>
+  <h3>Add Match</h3>
+  <input placeholder="Match Title">
+  <button>Add</button>
 
-<h3>Add Transfer</h3>
-<input placeholder="Transfer news">
-<button>Add</button>
-
+  <h3>Add Transfer</h3>
+  <input placeholder="Transfer Info">
+  <button>Add</button>
 </section>
 
 <script>
-function mode(){
-document.body.classList.toggle("light");
+// Dark/Light mode toggle
+function toggleMode(){
+  document.body.classList.toggle("light");
 }
 
+// Simple front-end login check
 function login(){
-let u=document.getElementById("user").value;
-let p=document.getElementById("pass").value;
-
-if(u==="admin" && p==="1234"){
-document.getElementById("admin").style.display="block";
-alert("Welcome Admin");
-}else{
-alert("Wrong login");
-}
+  const u = document.getElementById("username").value;
+  const p = document.getElementById("password").value;
+  if(u==="admin" && p==="1234"){
+    document.getElementById("adminPanel").style.display="block";
+    alert("Welcome Admin!");
+  } else {
+    alert("Incorrect credentials");
+  }
 }
 </script>
 
